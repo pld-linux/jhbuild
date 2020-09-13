@@ -1,12 +1,12 @@
 Summary:	Tool to ease building collections of source packages
 Summary(pl.UTF-8):	Narzędzie ułatwiające budowanie zbioru pakietów źródłowych
 Name:		jhbuild
-Version:	3.36.0
+Version:	3.38.0
 Release:	1
 License:	GPL v2+
 Group:		Development/Tools
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/jhbuild/3.36/%{name}-%{version}.tar.xz
-# Source0-md5:	50a3eb066c77af7e251deee8f616ca48
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/jhbuild/3.38/%{name}-%{version}.tar.xz
+# Source0-md5:	8621b7757fe0d4e04a66183a380d8f10
 URL:		https://wiki.gnome.org/Projects/Jhbuild
 BuildRequires:	gettext-tools >= 0.19.6
 BuildRequires:	pkgconfig
