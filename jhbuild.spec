@@ -2,7 +2,7 @@ Summary:	Tool to ease building collections of source packages
 Summary(pl.UTF-8):	Narzędzie ułatwiające budowanie zbioru pakietów źródłowych
 Name:		jhbuild
 Version:	3.38.0
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/jhbuild/3.38/%{name}-%{version}.tar.xz
@@ -16,6 +16,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires:	python3 >= 1:3.5
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,6 +42,9 @@ projektami.
 
 %build
 %configure \
+	ac_cv_build=%{_build} \
+	ac_cv_host=%{_host} \
+	am_cv_python_pythondir=%{py3_sitescriptdir} \
 	--enable-doc-installation \
 	--enable-gui \
 	--with-python=%{__python3}
@@ -61,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README.rst
 %attr(755,root,root) %{_bindir}/jhbuild
-%{py3_sitedir}/jhbuild
+%{py3_sitescriptdir}/jhbuild
 %dir %{_datadir}/jhbuild
 %{_datadir}/jhbuild/sitecustomize
 %{_datadir}/jhbuild/triggers
